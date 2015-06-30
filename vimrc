@@ -24,4 +24,6 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
+"shell下就是用Ctrl+d来退出shell，这里与shell一致。
+map <C-d> <C-w>q
 "==========================================
