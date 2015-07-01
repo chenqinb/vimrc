@@ -10,20 +10,45 @@
 "帮助语言为中文
 set helplang=cn
 "开启语法高亮
+"它只是执行如下命令 :source $VIMRUNTIME/syntax/syntax.vim
 syntax enable
+"用缺省值
 syntax on
 "去掉兼容vi的特性，这样vim功能更强大
 set nocompatible
-"在左边显示行数
-set nu
+"在左边显示行数  nu
+set number
 "支持鼠标，如果不想支持鼠标则 set mouse-=a
 "for git, does not support mouse,
 "so test before set mouse=a
 if has('mouse')
 	set mouse=a
 endif
-
-
+" 侦测文件类型
+filetype on
+" 载入文件类型插件
+filetype plugin on
+" 为特定文件类型载入相关缩进文件
+filetype indent on
+"搜索时，实时显示第一个符合条件的地方 is
+set incsearch
+"显示输入的命令，比如yiw这样的命令
+set showcmd
+"在执行宏命令时，不进行显示重绘；在宏命令执行完成后，一次性重绘，以便提高性能。
+set lazyredraw
+"光标上下两侧最少保留的屏幕行数
+set scrolloff=3
+"高亮光标所在的屏幕行  hl
+set cursorline
+"显示光标位置的行号和列号
+set ruler
+"设置历史条目
+set history=20000
+"指定的字符所用的补全模式，用最长的子串补全，然后列出所有的可能性
+set wildmode=longest,list
+"离开输入模式时，出现高亮光标所在行；进入输入模式，取消高亮光标所在行
+autocmd InsertLeave * se cursorline
+autocmd InsertEnter * se nocursorline
 
 
 
